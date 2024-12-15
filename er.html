@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+
+    <!-- CSS مخصص -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .login {
+            margin: 50px auto;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .form-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <h2>تسجيل الدخول</h2>
+        <form method="post" action="insert_user.php">
+            <!-- الاسم الأول -->
+            <div>
+                <label for="name" class="form-label">الاسم</label>
+                <input type="text" id="name" name="fname" class="form-control" required>
+            </div>
+
+            <!-- اللقب -->
+            <div>
+                <label for="last_name" class="form-label">اللقب</label>
+                <input type="text" id="last_name" name="lname" class="form-control" required>
+            </div>
+
+            <!-- رقم الهاتف -->
+            <div>
+                <label for="phone" class="form-label">رقم الهاتف</label>
+                <input type="text" id="phone" name="phone" class="form-control" required>
+            </div>
+
+            <!-- البريد الإلكتروني -->
+            <div>
+                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <!-- كلمة المرور -->
+            <div>
+                <label for="inputPassword4" class="form-label">كلمة المرور</label>
+                <input type="password" id="inputPassword4" name="password" class="form-control" required>
+            </div>
+
+            <!-- تأكيد كلمة المرور -->
+            <div>
+                <label for="inputPassword5" class="form-label">تأكيد كلمة المرور</label>
+                <input type="password" id="inputPassword5" name="passwordagin" class="form-control" required>
+            </div>
+
+            <!-- المحافظة -->
+            <div>
+                <label for="city" class="form-label">المحافظة</label>
+                <input type="text" id="city" name="city" class="form-control" required>
+            </div>
+
+            <!-- الشارع -->
+            <div>
+                <label for="street" class="form-label">الشارع</label>
+                <input type="text" id="street" name="street" class="form-control" required>
+            </div>
+
+            <!-- زر تسجيل الدخول -->
+            <div>
+                <button type="submit" name="insert" class="btn-primary">تسجيل الدخول</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

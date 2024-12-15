@@ -1,0 +1,266 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>صفحة الرئيسية</title>
+    <style>
+       
+
+      
+
+        
+
+        .banner {
+            position: relative;
+            overflow: hidden;
+            height: 350px; /* ارتفاع البانر */
+        }
+
+        .banner-images {
+            display: flex;
+            transition: transform 1s ease;
+        }
+
+        .banner-image {
+            min-width: 100%;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-image.active {
+            opacity: 1;
+        }
+
+        .banner-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .banner-content h2 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+        }
+
+        .btn {
+            background: #FFD700;
+            color: #0d0d0d;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin-left: 30px;
+        }
+
+        .btn:hover {
+            background: #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="main-title">مرحباً بكم في متجرنا</h1>
+        <div class="language-switcher">
+            <select id="lang-select">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#features" id="features-link">ميزات</a></li>
+                <li><a href="#featured-products" id="featured-products-link">المنتجات المميزة</a></li>
+                <li><a href="#new-products" id="new-products-link">المنتجات الجديدة</a></li>
+                <li><a href="store.html" id="store-link">المتجر</a></li>
+                <li><a href="blog.html" id="blog-link">المدونة</a></li>
+                <li><a href="about.html" id="about-link">حول</a></li>
+                <li><a href="contact.html" class="nav-link" id="contact-link">اتصل بنا</a></li>
+                <li><a href="cart.html" id="cart-link">عربة التسوق</a></li>
+                <li><a href="index.html" class="active" id="home-link">الرئيسية</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- قسم البانر -->
+    <section id="banner-section">
+        <div class="banner">
+            <div class="banner-images">
+                <img src="img/Ban3.jpg" alt="لافتة 1" class="banner-image active">
+                <img src="img/Bann.jpg" alt="لافتة 2" class="banner-image">
+                <img src="img/banr.jpg" alt="لافتة 3" class="banner-image">
+                <img src="img/Banar.jpg" alt="لافتة 3" class="banner-image">
+            </div>
+            <div class="banner-content">
+                <h2>استمتع بتجربة تسوق مميزة</h2>
+                <p>احصل على أفضل العروض والمنتجات الجديدة كل يوم!</p>
+                <a href="store.html" class="btn">تسوق الآن</a>
+            </div>
+        </div>
+    </section>
+        
+    
+
+    <section id="features">
+        <h2 id="features-title">ميزات الموقع</h2>
+        <div class="feature-card">
+            <img src="img/ee.png" alt="تشكيلة واسعة من المنتجات" class="feature-icon">
+            <h3 id="variety-title">تشكيلة واسعة من المنتجات</h3>
+            <p id="variety-description">نقدم مجموعة متنوعة من الملابس والإكسسوارات التي تناسب جميع الأذواق.</p>
+        </div>
+        <div class="feature-card">
+            <img src="img/ic.png" alt="تجربة تسوق سلسة" class="feature-icon">
+            <h3 id="smooth-experience-title">تجربة تسوق سلسة</h3>
+            <p id="smooth-experience-description">موقع سهل الاستخدام مع واجهة سهلة التنقل لضمان تجربة تسوق مريحة.</p>
+        </div>
+        <div class="feature-card">
+            <img src="img/sl.png" alt="عروض وخصومات حصرية" class="feature-icon">
+            <h3 id="exclusive-offers-title">عروض وخصومات حصرية</h3>
+            <p id="exclusive-offers-description">استمتع بعروض خاصة وخصومات على مجموعة مختارة من المنتجات.</p>
+        </div>
+        <div class="feature-card">
+            <img src="img/new.png" alt="منتجات جديدة كل أسبوع" class="feature-icon">
+            <h3 id="new-products-title">منتجات جديدة كل أسبوع</h3>
+            <p id="new-products-description">نضيف مجموعة جديدة من المنتجات كل أسبوع، مما يضمن أن لديك دائماً شيئًا جديدًا لاستكشافه.</p>
+        </div>
+        <div class="feature-card">
+            <img src="img/sup.png" alt="خدمة عملاء ممتازة" class="feature-icon">
+            <h3 id="excellent-service-title">خدمة عملاء ممتازة</h3>
+            <p id="excellent-service-description">فريق دعم مخصص لمساعدتك في أي استفسارات أو مشكلات قد تواجهها.</p>
+        </div>
+        <div class="feature-card">
+            <img src="img/news.png" alt="اشتراك في النشرة الإخبارية" class="feature-icon">
+            <h3 id="newsletter-title">اشتراك في النشرة الإخبارية</h3>
+            <p id="newsletter-description">احصل على تحديثات حول أحدث المنتجات والعروض مباشرة إلى بريدك الإلكتروني.</p>
+        </div>
+    </section>
+
+    <section id="new-products">
+        <h2 id="new-products-header">المنتجات الجديدة</h2>
+        <div class="product-card" onclick="alert('تم النقر على منتج جديد 1!');">
+            <img src="img/Tt.jpg" alt="منتج جديد 1">
+            <h4>اسم المنتج 1</h4>
+            <p>السعر: 80 ريال</p>
+            <a href="product.html?name=منتج%20جديد%203&price=100&image=img/Tt.jpg" class="btn">عرض التفاصيل</a>
+        </div>
+        <div class="product-card" onclick="alert('تم النقر على منتج جديد 2!');">
+            <img src="img/Zz_.jpg" alt="منتج جديد 2">
+            <h4>اسم المنتج 2</h4>
+            <p>السعر: 90 ريال</p>
+            <a href="product.html?name=منتج%20جديد%203&price=100&image=img/Zz_.jpg" class="btn">عرض التفاصيل</a>
+        </div>
+        
+        <div class="product-card" onclick="alert('تم النقر على منتج جديد 3!');">
+            <img src="img/Ww.webp" alt="منتج جديد 3">
+            <h4>اسم المنتج 3</h4>
+            <p>السعر: 100 ريال</p>
+            <a href="product.html?name=منتج%20جديد%203&price=100&image=img/Ww.webp" class="btn">عرض التفاصيل</a>
+        </div>
+        
+    </section>
+
+    <section id="newsletter">
+        <h2 id="newsletter-title" style="color: #FFD700;">اشترك في النشرة الإخبارية</h2>
+        <form>
+            <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+            <button type="submit">اشترك</button>
+        </form>
+    </section>
+
+    <footer>
+        <p id="footer-text">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.</p>
+        <p>تابعونا على: 
+            <a href="#">فيسبوك</a> | 
+            <a href="#">تويتر</a> | 
+            <a href="#">إنستغرام</a>
+        </p>
+    </footer>
+
+    <script>
+        // وظيفة لتغيير اللغة
+        document.getElementById("lang-select").addEventListener("change", function() {
+            const language = this.value;
+            if (language === "en") {
+                document.documentElement.lang = "en";
+                document.getElementById("main-title").innerText = "Welcome to Our Store";
+                document.getElementById("features-title").innerText = "Website Features";
+                document.getElementById("variety-title").innerText = "Wide Variety of Products";
+                document.getElementById("variety-description").innerText = "We offer a diverse range of clothing and accessories to suit all tastes.";
+                document.getElementById("smooth-experience-title").innerText = "Seamless Shopping Experience";
+                document.getElementById("smooth-experience-description").innerText = "An easy-to-use website with a user-friendly interface to ensure a comfortable shopping experience.";
+                document.getElementById("exclusive-offers-title").innerText = "Exclusive Offers and Discounts";
+                document.getElementById("exclusive-offers-description").innerText = "Enjoy special offers and discounts on a selection of products.";
+                document.getElementById("new-products-title").innerText = "New Products Every Week";
+                document.getElementById("new-products-description").innerText = "We add a new range of products every week, ensuring you always have something new to explore.";
+                document.getElementById("excellent-service-title").innerText = "Excellent Customer Service";
+                document.getElementById("excellent-service-description").innerText = "A dedicated support team to assist you with any inquiries or issues you may encounter.";
+                document.getElementById("newsletter-title").innerText = "Subscribe to the Newsletter";
+                document.getElementById("newsletter-description").innerText = "Get updates on the latest products and offers delivered directly to your email.";
+                document.getElementById("new-products-header").innerText = "New Products";
+                document.getElementById("footer-text").innerText = "Copyright &copy; 2024 All rights reserved.";
+                document.getElementById("store-link").innerText = "Store";
+                document.getElementById("blog-link").innerText = "Blog";
+                document.getElementById("about-link").innerText = "About";
+                document.getElementById("contact-link").innerText = "Contact Us";
+                document.getElementById("cart-link").innerText = "Shopping Cart";
+                document.getElementById("home-link").innerText = "Home";
+            } else {
+                document.documentElement.lang = "ar";
+                document.getElementById("main-title").innerText = "مرحباً بكم في متجرنا";
+                document.getElementById("features-title").innerText = "ميزات الموقع";
+                document.getElementById("variety-title").innerText = "تشكيلة واسعة من المنتجات";
+                document.getElementById("variety-description").innerText = "نقدم مجموعة متنوعة من الملابس والإكسسوارات التي تناسب جميع الأذواق.";
+                document.getElementById("smooth-experience-title").innerText = "تجربة تسوق سلسة";
+                document.getElementById("smooth-experience-description").innerText = "موقع سهل الاستخدام مع واجهة سهلة التنقل لضمان تجربة تسوق مريحة.";
+                document.getElementById("exclusive-offers-title").innerText = "عروض وخصومات حصرية";
+                document.getElementById("exclusive-offers-description").innerText = "استمتع بعروض خاصة وخصومات على مجموعة مختارة من المنتجات.";
+                document.getElementById("new-products-title").innerText = "منتجات جديدة كل أسبوع";
+                document.getElementById("new-products-description").innerText = "نضيف مجموعة جديدة من المنتجات كل أسبوع، مما يضمن أن لديك دائماً شيئًا جديدًا لاستكشافه.";
+                document.getElementById("excellent-service-title").innerText = "خدمة عملاء ممتازة";
+                document.getElementById("excellent-service-description").innerText = "فريق دعم مخصص لمساعدتك في أي استفسارات أو مشكلات قد تواجهها.";
+                document.getElementById("newsletter-title").innerText = "اشتراك في النشرة الإخبارية";
+                document.getElementById("newsletter-description").innerText = "احصل على تحديثات حول أحدث المنتجات والعروض مباشرة إلى بريدك الإلكتروني.";
+                document.getElementById("new-products-header").innerText = "المنتجات الجديدة";
+                document.getElementById("footer-text").innerText = "حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.";
+                document.getElementById("store-link").innerText = "المتجر";
+                document.getElementById("blog-link").innerText = "المدونة";
+                document.getElementById("about-link").innerText = "حول";
+                document.getElementById("contact-link").innerText = "اتصل بنا";
+                document.getElementById("cart-link").innerText = "عربة التسوق";
+                document.getElementById("home-link").innerText = "الرئيسية";
+            }
+        });
+    </script>
+    
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.banner-image');
+    
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+    
+        setInterval(showNextImage, 3000); // تغيير الصورة كل 3 ثوانٍ
+    </script>
+    
+</body>
+</html>
+

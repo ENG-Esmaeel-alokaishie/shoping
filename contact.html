@@ -1,0 +1,195 @@
+<!-- <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مرحباً بكم في متجرنا</h1>
+        <div class="language-switcher">
+            <select id="lang-select" onchange="changeLanguage()">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+               
+                <li><a href="store.html">المتجر</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">حول</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+                <li><a href="cart.html">عربة التسوق</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="features">
+            
+            
+                <div class="container">
+                    <h1>اتصل بنا</h1>
+                    <form>
+                        <label for="name">الاسم:</label>
+                        <input type="text" id="name" required>
+                        
+                        <label for="email">البريد الإلكتروني:</label>
+                        <input type="email" id="email" required>
+                        
+                        <label for="message">رسالتك:</label>
+                        <textarea id="message" required></textarea>
+                        
+                        <button type="submit">إرسال</button>
+                    </form>
+                </div>
+           
+            
+        </main>
+        </section>
+      
+
+    <footer>
+        <p>حقوق النشر &copy; 2024 اسم المتجر. جميع الحقوق محفوظة.</p>
+        <ul>
+            <li><a href="#">فيسبوك</a></li>
+            <li><a href="#">تويتر</a></li>
+            <li><a href="#">إنستغرام</a></li>
+        </ul>
+    </footer>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">المنتج الفردي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="welcome-message">مرحباً بكم في متجرنا</h1>
+        <div class="language-switcher">
+            <select id="lang-select" onchange="changeLanguage()">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="store.html" id="store-link">المتجر</a></li>
+                <li><a href="blog.html" id="blog-link">المدونة</a></li>
+                <li><a href="about.html" id="about-link">حول</a></li>
+                <li><a href="contact.html" id="contact-link">اتصل بنا</a></li>
+                <li><a href="cart.html" id="cart-link">عربة التسوق</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="features">
+            <div id="product-details" class="product-details"></div>
+        </section>
+    </main>
+    <footer>
+        <p id="footer-text">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.</p>
+        <p>تابعونا على: 
+            <a href="#">فيسبوك</a> | 
+            <a href="#">تويتر</a> | 
+            <a href="#">إنستغرام</a>
+        </p>
+    </footer>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const image = params.get('image');
+        const price = params.get('price');
+
+        const productDetails = `
+            <h2 id="product-name">${name}</h2>
+            <img src="${image}" alt="${name}" class="product-image">
+            <p class="price" id="product-price">السعر: ${price} ريال</p>
+            <div class="options">
+                <label for="size" id="size-label">المقاس:</label>
+                <select id="size">
+                    <option value="S">صغير</option>
+                    <option value="M">متوسط</option>
+                    <option value="L">كبير</option>
+                </select>
+                <br>
+                <label for="quantity" id="quantity-label">الكمية:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                <br>
+                <label for="color" id="color-label">اللون:</label>
+                <select id="color">
+                    <option value="red">أحمر</option>
+                    <option value="blue">أزرق</option>
+                    <option value="black">أسود</option>
+                </select>
+            </div>
+            <button class="add-to-cart" onclick="addToCart()">
+                <span id="add-to-cart-text">أضف إلى السلة</span>
+            </button>
+        `;
+
+        document.getElementById('product-details').innerHTML = productDetails;
+
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            const selectedSize = document.getElementById('size').value;
+            const selectedColor = document.getElementById('color').value;
+
+            const cartItem = {
+                name: name,
+                image: image,
+                price: price,
+                quantity: quantity,
+                size: selectedSize,
+                color: selectedColor
+            };
+
+            sessionStorage.setItem('cartItem', JSON.stringify(cartItem));
+            window.location.href = 'cart.html'; // الانتقال إلى صفحة عربة التسوق
+        }
+
+        function changeLanguage() {
+            const lang = document.getElementById('lang-select').value;
+            if (lang === 'en') {
+                document.getElementById('page-title').textContent = 'Single Product';
+                document.getElementById('welcome-message').textContent = 'Welcome to our store';
+                document.getElementById('store-link').textContent = 'Store';
+                document.getElementById('blog-link').textContent = 'Blog';
+                document.getElementById('about-link').textContent = 'About';
+                document.getElementById('contact-link').textContent = 'Contact Us';
+                document.getElementById('cart-link').textContent = 'Cart';
+                document.getElementById('product-price').textContent = `Price: ${price} SAR`;
+                document.getElementById('size-label').textContent = 'Size:';
+                document.getElementById('quantity-label').textContent = 'Quantity:';
+                document.getElementById('color-label').textContent = 'Color:';
+                document.getElementById('add-to-cart-text').textContent = 'Add to Cart';
+                document.getElementById('footer-text').textContent = 'Copyright &copy; 2024 All rights reserved.';
+            } else {
+                document.getElementById('page-title').textContent = 'المنتج الفردي';
+                document.getElementById('welcome-message').textContent = 'مرحباً بكم في متجرنا';
+                document.getElementById('store-link').textContent = 'المتجر';
+                document.getElementById('blog-link').textContent = 'المدونة';
+                document.getElementById('about-link').textContent = 'حول';
+                document.getElementById('contact-link').textContent = 'اتصل بنا';
+                document.getElementById('cart-link').textContent = 'عربة التسوق';
+                document.getElementById('product-price').textContent = `السعر: ${price} ريال`;
+                document.getElementById('size-label').textContent = 'المقاس:';
+                document.getElementById('quantity-label').textContent = 'الكمية:';
+                document.getElementById('color-label').textContent = 'اللون:';
+                document.getElementById('add-to-cart-text').textContent = 'أضف إلى السلة';
+                document.getElementById('footer-text').textContent = 'حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.';
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,110 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المدونة</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <h1 id="header-title">مرحباً بكم في متجرنا</h1>
+        <div class="language-switcher">
+            <select id="lang-select" onchange="changeLanguage()">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li><a id="store-link" href="store.html">المتجر</a></li>
+                <li><a id="blog-link" href="blog.html">المدونة</a></li>
+                <li><a id="about-link" href="about.html">حول</a></li>
+                <li><a id="contact-link" href="contact.html">اتصل بنا</a></li>
+                <li><a id="cart-link" href="cart.html">عربة التسوق</a></li>
+                <li><a id="home-link" href="index.html">الرئيسية</a></li>
+            </ul>
+        </nav>
+    </header>
+<section id="features">
+    
+    <main>
+        <h2 id="blog-title">مقالات المدونة</h2>
+        <article>
+            <div class="feature-card">
+                <h3 id="article1-title">كيف تختار الملابس المناسبة لك؟</h3>
+                <p id="article1-content">اختيار الملابس المناسبة يعتمد على مقاس جسمك، نمط حياتك، وألوانك المفضلة. حاول تجربة الملابس قبل الشراء للتأكد من الراحة والتناسب.</p>
+            </div>
+          
+        </article>
+        <article>
+    <div class="feature-card">
+        <h3 id="article2-title">أحدث صيحات الموضة لهذا الموسم</h3>
+        <p id="article2-content">هذا الموسم، تعود الألوان الزاهية والأنماط الجريئة. تأكد من إضافة بعض القطع الجريئة إلى خزانة ملابسك لتبقى على تواصل مع أحدث الصيحات.</p>
+    </div>
+        </article>
+        <article>
+<div class="feature-card">
+    <h3 id="article3-title">كيف تعتني بملابسك الجديدة؟</h3>
+    <p id="article3-content">للحفاظ على جودة ملابسك، تأكد من قراءة تعليمات العناية. اغسلها بطريقة صحيحة واحفظها في مكان مناسب للحفاظ على شكلها ولونها.</p>
+</div>
+        </article>
+    </main>
+</section>
+
+    <footer>
+        <p id="footer-text">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.</p>
+        <p>تابعونا على: 
+            <a href="#">فيسبوك</a> | 
+            <a href="#">تويتر</a> | 
+            <a href="#">إنستغرام</a>
+        </p>
+    </footer>
+
+    <script>
+        const translations = {
+            ar: {
+                headerTitle: "مرحباً بكم في متجرنا",
+                blogTitle: "مقالات المدونة",
+                articles: [
+                    { title: "كيف تختار الملابس المناسبة لك؟", content: "اختيار الملابس المناسبة يعتمد على مقاس جسمك، نمط حياتك، وألوانك المفضلة. حاول تجربة الملابس قبل الشراء للتأكد من الراحة والتناسب." },
+                    { title: "أحدث صيحات الموضة لهذا الموسم", content: "هذا الموسم، تعود الألوان الزاهية والأنماط الجريئة. تأكد من إضافة بعض القطع الجريئة إلى خزانة ملابسك لتبقى على تواصل مع أحدث الصيحات." },
+                    { title: "كيف تعتني بملابسك الجديدة؟", content: "للحفاظ على جودة ملابسك، تأكد من قراءة تعليمات العناية. اغسلها بطريقة صحيحة واحفظها في مكان مناسب للحفاظ على شكلها ولونها." }
+                ],
+                footerText: "حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة."
+            },
+            en: {
+                headerTitle: "Welcome to Our Store",
+                blogTitle: "Blog Articles",
+                articles: [
+                    { title: "How to Choose the Right Clothes for You?", content: "Choosing the right clothes depends on your body size, lifestyle, and favorite colors. Try on clothes before buying to ensure comfort and fit." },
+                    { title: "Latest Fashion Trends This Season", content: "This season, bright colors and bold patterns are making a comeback. Make sure to add some daring pieces to your wardrobe to stay in touch with the latest trends." },
+                    { title: "How to Care for Your New Clothes?", content: "To maintain the quality of your clothes, be sure to read the care instructions. Wash them properly and store them in a suitable place to keep their shape and color." }
+                ],
+                footerText: "Copyright &copy; 2024 All rights reserved."
+            }
+        };
+
+        function changeLanguage() {
+            const lang = document.getElementById("lang-select").value;
+            const translation = translations[lang];
+
+            document.getElementById("header-title").innerText = translation.headerTitle;
+            document.getElementById("blog-title").innerText = translation.blogTitle;
+            document.getElementById("article1-title").innerText = translation.articles[0].title;
+            document.getElementById("article1-content").innerText = translation.articles[0].content;
+            document.getElementById("article2-title").innerText = translation.articles[1].title;
+            document.getElementById("article2-content").innerText = translation.articles[1].content;
+            document.getElementById("article3-title").innerText = translation.articles[2].title;
+            document.getElementById("article3-content").innerText = translation.articles[2].content;
+            document.getElementById("footer-text").innerText = translation.footerText;
+        }
+    </script>
+</body>
+</html>
+

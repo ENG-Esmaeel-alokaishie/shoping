@@ -1,0 +1,206 @@
+<!-- <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عربة التسوق</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مرحباً بكم في متجرنا</h1>
+        <div class="language-switcher">
+            <select id="lang-select">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+              
+              
+                <li><a href="store.html">المتجر</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">حول</a></li>
+                <li><a href="contact.html" class="nav-link">اتصل بنا</a></li>
+                <li><a href="cart.html">عربة التسوق</a></li>
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="features">
+            <h2>عربة التسوق</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>السعر</th>
+                    <th>الكمية</th>
+                    <th>الإجمالي</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+        <div class="total">
+            <h3 id="total-price">الإجمالي: 0 ريال</h3>
+            <button>متابعة الدفع</button>
+        </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.</p>
+        <p>تابعونا على: 
+            <a href="#">فيسبوك</a> | 
+            <a href="#">تويتر</a> | 
+            <a href="#">إنستغرام</a>
+        </p>
+    </footer>
+
+    <script>
+        const cartItem = JSON.parse(sessionStorage.getItem('cartItem'));
+        if (cartItem) {
+            const tbody = document.getElementById('cart-items');
+            const row = document.createElement('tr');
+            const totalPrice = parseFloat(cartItem.price) * parseInt(cartItem.quantity);
+            row.innerHTML = `
+                <td><img src="${cartItem.image}" alt="${cartItem.name}" style="width: 50px;"> ${cartItem.name} (${cartItem.size}, ${cartItem.color})</td>
+                <td>${cartItem.price} ريال</td>
+                <td>${cartItem.quantity}</td>
+                <td>${totalPrice} ريال</td>
+            `;
+            tbody.appendChild(row);
+
+            // حساب الإجمالي
+            document.getElementById('total-price').textContent = `الإجمالي: ${totalPrice} ريال`;
+
+            // حذف العنصر من الجلسة (اختياري)
+            sessionStorage.removeItem('cartItem');
+        }
+    </script>
+</body>
+</html>
+
+
+ -->
+
+
+
+
+ <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عربة التسوق</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="welcome-message">مرحباً بكم في متجرنا</h1>
+        <div class="language-switcher">
+            <select id="lang-select" onchange="changeLanguage()">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="store.html" id="store-link">المتجر</a></li>
+                <li><a href="blog.html" id="blog-link">المدونة</a></li>
+                <li><a href="about.html" id="about-link">حول</a></li>
+                <li><a href="contact.html" class="nav-link" id="contact-link">اتصل بنا</a></li>
+                <li><a href="cart.html" id="cart-link">عربة التسوق</a></li>
+                <li><a href="index.html" class="active" id="home-link">الرئيسية</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="features">
+            <h2 id="cart-title">عربة التسوق</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="product-header">المنتج</th>
+                        <th id="price-header">السعر</th>
+                        <th id="quantity-header">الكمية</th>
+                        <th id="total-header">الإجمالي</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+            <div class="total">
+                <h3 id="total-price">الإجمالي: 0 ريال</h3>
+                <button id="checkout-button">متابعة الدفع</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p id="footer-text">حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.</p>
+        <p>تابعونا على: 
+            <a href="#">فيسبوك</a> | 
+            <a href="#">تويتر</a> | 
+            <a href="#">إنستغرام</a>
+        </p>
+    </footer>
+
+    <script>
+        const cartItem = JSON.parse(sessionStorage.getItem('cartItem'));
+        if (cartItem) {
+            const tbody = document.getElementById('cart-items');
+            const row = document.createElement('tr');
+            const totalPrice = parseFloat(cartItem.price) * parseInt(cartItem.quantity);
+            row.innerHTML = `
+                <td><img src="${cartItem.image}" alt="${cartItem.name}" style="width: 50px;"> ${cartItem.name} (${cartItem.size}, ${cartItem.color})</td>
+                <td>${cartItem.price} ريال</td>
+                <td>${cartItem.quantity}</td>
+                <td>${totalPrice} ريال</td>
+            `;
+            tbody.appendChild(row);
+
+            // حساب الإجمالي
+            document.getElementById('total-price').textContent = `الإجمالي: ${totalPrice} ريال`;
+
+            // حذف العنصر من الجلسة (اختياري)
+            sessionStorage.removeItem('cartItem');
+        }
+
+        function changeLanguage() {
+            const lang = document.getElementById('lang-select').value;
+            if (lang === 'en') {
+                document.getElementById('welcome-message').textContent = 'Welcome to our store';
+                document.getElementById('store-link').textContent = 'Store';
+                document.getElementById('blog-link').textContent = 'Blog';
+                document.getElementById('about-link').textContent = 'About';
+                document.getElementById('contact-link').textContent = 'Contact Us';
+                document.getElementById('cart-link').textContent = 'Cart';
+                document.getElementById('home-link').textContent = 'Home';
+                document.getElementById('cart-title').textContent = 'Shopping Cart';
+                document.getElementById('product-header').textContent = 'Product';
+                document.getElementById('price-header').textContent = 'Price';
+                document.getElementById('quantity-header').textContent = 'Quantity';
+                document.getElementById('total-header').textContent = 'Total';
+                document.getElementById('checkout-button').textContent = 'Proceed to Checkout';
+                document.getElementById('footer-text').textContent = 'Copyright &copy; 2024 All rights reserved.';
+            } else {
+                document.getElementById('welcome-message').textContent = 'مرحباً بكم في متجرنا';
+                document.getElementById('store-link').textContent = 'المتجر';
+                document.getElementById('blog-link').textContent = 'المدونة';
+                document.getElementById('about-link').textContent = 'حول';
+                document.getElementById('contact-link').textContent = 'اتصل بنا';
+                document.getElementById('cart-link').textContent = 'عربة التسوق';
+                document.getElementById('home-link').textContent = 'الرئيسية';
+                document.getElementById('cart-title').textContent = 'عربة التسوق';
+                document.getElementById('product-header').textContent = 'المنتج';
+                document.getElementById('price-header').textContent = 'السعر';
+                document.getElementById('quantity-header').textContent = 'الكمية';
+                document.getElementById('total-header').textContent = 'الإجمالي';
+                document.getElementById('checkout-button').textContent = 'متابعة الدفع';
+                document.getElementById('footer-text').textContent = 'حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.';
+            }
+        }
+    </script>
+</body>
+</html>
+

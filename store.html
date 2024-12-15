@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة المتجر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="main-title">مرحباً بكم في متجرنا</h1>
+        <div class="language-switcher">
+            <select id="lang-select">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="store.html" id="store-link">المتجر</a></li>
+                <li><a href="blog.html" id="blog-link">المدونة</a></li>
+                <li><a href="about.html" id="about-link">حول</a></li>
+                <li><a href="contact.html" class="nav-link" id="contact-link">اتصل بنا</a></li>
+                <li><a href="cart.html" id="cart-link">عربة التسوق</a></li>
+                <li><a href="index.html" class="active" id="home-link">الرئيسية</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="winter">
+            <h2 id="winter-title">شتويات</h2>
+            <div class="product-container">
+                <div class="feature-card">
+                    <div class="product-card" onclick="goToProduct('منتج 1', 'img/Mon1.jpg', 100)">
+                        <img src="img/Mon1.jpg" alt="منتج 1">
+                        <h3>منتج 1</h3>
+                        <p>السعر: 100 ريال</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="product-card" onclick="goToProduct('منتج 2', 'img/Sh.jpg', 150)">
+                        <img src="img/Sh.jpg" alt=" 2">
+                        <h3>منتج 2</h3>
+                        <p>السعر: 150 ريال</p>
+                    </div>
+                </div>
+                <!-- المزيد من المنتجات -->
+            </div>
+        </section>
+
+        <section id="dresses">
+            <h2 id="dresses-title">فساتين</h2>
+            <div class="product-container">
+                <div class="feature-card">
+                    <div class="product-card" onclick="goToProduct('منتج 1', 'img/Tt.jpg', 100)">
+                        <img src="img/Tt.jpg" alt="منتج 1">
+                        <h3>منتج 1</h3>
+                        <p>السعر: 100 ريال</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="product-card" onclick="goToProduct('منتج 2', 'img/Fss.jpg', 150)">
+                        <img src="img/Fss.jpg" alt="منتج 2">
+                        <h3>منتج 2</h3>
+                        <p>السعر: 150 ريال</p>
+                    </div>
+                </div>
+                <!-- المزيد من المنتجات -->
+            </div>
+        </section>
+
+        <section id="summer">
+            <h2 id="summer-title">صيفيه</h2>
+            <div class="product-container">
+                <div class="feature-card">
+                    <div class="product-card" onclick="goToProduct('منتج 1', 'img/Saee.jpg', 100)">
+                        <img src="img/Saee.jpg" alt="منتج 1">
+                        <h3>منتج 1</h3>
+                        <p>السعر: 100 ريال</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="product-card" onclick="goToProduct('منتج 1', 'img/Mon1.jpg', 100)">
+                        <img src="img/Mon1.jpg" alt="منتج 1">
+                        <h3>منتج 1</h3>
+                        <p>السعر: 100 ريال</p>
+                    </div>
+                    
+                    </div>
+                    
+                    
+                </div>
+                <!-- المزيد من المنتجات -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>حقوق الطبع والنشر &copy; 2024 جميع الحقوق محفوظة.</p>
+        <p>تابعونا على: 
+            <a href="#">فيسبوك</a> | 
+            <a href="#">تويتر</a> | 
+            <a href="#">إنستغرام</a>
+        </p>
+    </footer>
+    <script>
+      function goToProduct(name, image, price) {
+    window.location.href = `product.html?name=${encodeURIComponent(name)}&image=${encodeURIComponent(image)}&price=${price}`;
+}
+
+
+
+
+        // وظيفة لتغيير اللغة
+        document.getElementById("lang-select").addEventListener("change", function() {
+            const language = this.value;
+            if (language === "en") {
+                // تغيير إلى الإنجليزية
+                document.documentElement.lang = "en";
+                document.getElementById("main-title").innerText = "Welcome to Our Store";
+                document.getElementById("winter-title").innerText = "Winter";
+                document.getElementById("dresses-title").innerText = "Dresses";
+                document.getElementById("summer-title").innerText = "Summer";
+                document.getElementById("store-link").innerText = "Store";
+                document.getElementById("blog-link").innerText = "Blog";
+                document.getElementById("about-link").innerText = "About";
+                document.getElementById("contact-link").innerText = "Contact Us";
+                document.getElementById("cart-link").innerText = "Shopping Cart";
+                document.getElementById("home-link").innerText = "Home";
+            } else {
+                // تغيير إلى العربية
+                document.documentElement.lang = "ar";
+                document.getElementById("main-title").innerText = "مرحباً بكم في متجرنا";
+                document.getElementById("winter-title").innerText = "شتويات";
+                document.getElementById("dresses-title").innerText = "فساتين";
+                document.getElementById("summer-title").innerText = "صيفيه";
+                document.getElementById("store-link").innerText = "المتجر";
+                document.getElementById("blog-link").innerText = "المدونة";
+                document.getElementById("about-link").innerText = "حول";
+                document.getElementById("contact-link").innerText = "اتصل بنا";
+                document.getElementById("cart-link").innerText = "عربة التسوق";
+                document.getElementById("home-link").innerText = "الرئيسية";
+            }
+        });
+    </script>
+</body>
+</html>
